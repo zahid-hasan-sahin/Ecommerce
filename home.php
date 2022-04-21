@@ -150,7 +150,7 @@
                 foreach ($cur as $result) {
                 ?>
                   <form method="POST" action="cart/controller.php?action=add">
-                    <input type="hidden" name="PROPRICE" value="<?php echo $result->PROPRICE; ?>">
+                    <input type="hidden" name="PROPRICE" value="<?php echo $result->PRODISPRICE; ?>">
                     <input type="hidden" id="PROQTY" name="PROQTY" value="<?php echo $result->PROQTY; ?>">
 
                     <input type="hidden" name="PROID" value="<?php echo $result->PROID; ?>">
@@ -180,7 +180,7 @@
                 foreach ($cur as $result) {
                 ?>
                   <form method="POST" action="cart/controller.php?action=add">
-                    <input type="hidden" name="PROPRICE" value="<?php echo $result->PROPRICE; ?>">
+                    <input type="hidden" name="PROPRICE" value="<?php echo $result->PRODISPRICE; ?>">
                     <input type="hidden" id="PROQTY" name="PROQTY" value="<?php echo $result->PROQTY; ?>">
 
                     <input type="hidden" name="PROID" value="<?php echo $result->PROID; ?>">
