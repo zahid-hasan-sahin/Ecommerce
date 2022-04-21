@@ -80,7 +80,7 @@
           <?php
 
           $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-            WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 ";
+            WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
           $mydb->setQuery($query);
           $cur = $mydb->loadResultList();
 
@@ -143,7 +143,7 @@
               <div class="item active">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 limit 3 ";
+                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
@@ -160,7 +160,7 @@
                           <div class="productinfo text-center">
                             <img src="<?php echo web_root . 'admin/products/' . $result->IMAGES; ?>" alt="" />
                             <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
-                            <p  style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
+                            <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                             <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                           </div>
 
@@ -173,7 +173,7 @@
               <div class="item">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 limit 3,6";
+                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
@@ -190,7 +190,7 @@
                           <div class="productinfo text-center">
                             <img src="<?php echo web_root . 'admin/products/' . $result->IMAGES; ?>" alt="" />
                             <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
-                            <p  style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
+                            <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                             <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                           </div>
 
