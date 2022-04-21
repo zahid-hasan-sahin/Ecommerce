@@ -82,7 +82,3 @@ switch ($view) {
     
  
 require_once("theme/templates.php");
- 
-
-?>
-

@@ -31,7 +31,7 @@ switch ($action) {
    if(isset($_POST['btnorder'])){
     $pid= $_POST['PROID'];
     $price= $_POST['PROPRICE'];
-
+	
 
     $sql = "SELECT * FROM `tblproduct` WHERE `PROID` ='" . $pid. "'";
     $mydb->setQuery($sql);
@@ -115,4 +115,3 @@ switch ($action) {
 	// 		echo '<script> alert("Get success");</script>';
 	// 	}
 	// }
-?>
