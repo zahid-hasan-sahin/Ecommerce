@@ -46,7 +46,8 @@ if (!isset($_SESSION['CUSID'])) {
 ?>
 
 <?php
-$query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'Pending'";
+$userId = $_SESSION['CUSID'];
+$query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'Pending' and USERID='".$userId."';";
 $mydb->setQuery($query);
 $cur = $mydb->executeQuery();
 $rowscount = $mydb->num_rows($cur);
