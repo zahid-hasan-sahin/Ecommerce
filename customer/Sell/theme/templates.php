@@ -47,7 +47,7 @@ if (!isset($_SESSION['CUSID'])) {
 
 <?php
 $userId = $_SESSION['CUSID'];
-$query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'Pending' and USERID='".$userId."';";
+$query = "SELECT * FROM tblsummary WHERE ORDEREDSTATS = 'Pending' and USERID='" . $userId . "';";
 $mydb->setQuery($query);
 $cur = $mydb->executeQuery();
 $rowscount = $mydb->num_rows($cur);
@@ -138,8 +138,8 @@ if ($res > 0) {
                              <a href="<?php echo web_root; ?>customer/sell/autonumber/index.php" ><i class="fa fa-list-alt fa-fw"></i>  Autonumber </a>
             
                         </li> -->
-               
-              
+
+
 
 
 
