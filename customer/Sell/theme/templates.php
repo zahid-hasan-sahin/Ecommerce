@@ -78,22 +78,10 @@ if ($res > 0) {
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-plus fa-fw"></i> New <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="<?php echo web_root; ?>customer/sell/products/index.php?view=add"><i class="fa fa-barcode fa-fw"></i> Product</a>
-                        </li>
-                        <li><a href="<?php echo web_root; ?>customer/sell/category/index.php?view=add"><i class="fa fa-list-alt  fa-fw"></i> Category</a>
-                        </li>
+                <li><a href="<?php echo web_root ?>index.php"><i class="fa fa-lock"></i> Buy</a></li>
+                <li><a href="<?php echo web_root ?>logout.php"><i class="fa fa-lock"></i> Logout</a></li>
+                <!-- /.dropdown-user -->
 
-                        <li><a href="<?php echo web_root; ?>customer/sell/user/index.php?view=add"><i class="fa fa-user  fa-fw"></i> User</a>
-                        </li>
-
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
                 <?php
                 $user = new User();
                 $singleuser = $user->single_user($_SESSION['CUSID']);
