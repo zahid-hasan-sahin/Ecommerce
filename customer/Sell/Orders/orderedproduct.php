@@ -92,7 +92,7 @@ $query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c
 				  		$cur = $mydb->loadResultList(); 
 						foreach ($cur as $result) {
 						echo '<tr>';  
-				  		echo '<td ><img src="'.web_root.'admin/products/'. $result->IMAGES.'" width="60px" height="60px" title="'.$result->PRODESC.'"/></td>';
+				  		echo '<td ><img src="'.web_root.'customer/sell/products/'. $result->IMAGES.'" width="60px" height="60px" title="'.$result->PRODESC.'"/></td>';
 				  	 	echo '<td>'. $result->PRODESC.'</td>';
 				  		echo '<td> &#8369 '.number_format($result->PROPRICE,2).' </td>';
 				  		echo '<td align="center" >'. $result->ORDEREDQTY.'</td>';

@@ -87,7 +87,7 @@ if (isset($_SESSION['gcCart'])) {
               <ul class="nav navbar-nav">
                 <li><a href="<?php echo web_root; ?>index.php?q=cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                 <?php if (isset($_SESSION['CUSID'])) { ?>
-                  <li><a href="<?php echo web_root ?>customer/sell"><i class="fa fa-lock"></i> Sell</a></li>
+                  <li><a href="<?php echo web_root ?>customer/sell"><i class="fab fa-github-square"></i> Sell</a></li>
                   <li><a href="<?php echo web_root ?>index.php?q=profile"><i class="fa fa-user"></i> Account</a></li>
                   <li><a href="<?php echo web_root ?>logout.php"><i class="fa fa-lock"></i> Logout</a></li>
                    <?php } else { ?>
