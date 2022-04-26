@@ -49,7 +49,7 @@
         ?>
               <tr>
                 <td>
-                  <img src="<?php echo web_root . 'admin/products/' . $result->IMAGES; ?>" onload="  totalprice() " width="50px" height="50px">
+                  <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" onload="  totalprice() " width="50px" height="50px">
                   <br />
                   <?php
 
