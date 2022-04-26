@@ -79,7 +79,7 @@
                   <input type="hidden" id="PROPRICE<?php echo $result->PROID;  ?>" name="PROPRICE<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE; ?>">
 
                   &#8369 <?php echo  $result->PRODISPRICE; ?>
-                  
+
                 </td>
                 <td class="input-group custom-search-form">
                   <input type="hidden" maxlength="3" class="form-control input-sm" autocomplete="off" id="ORIGQTY<?php echo $result->PROID;  ?>" name="ORIGQTY<?php echo $result->PROID; ?>" value="<?php echo $result->PROQTY; ?>" placeholder="Search for...">

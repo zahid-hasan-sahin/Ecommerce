@@ -82,7 +82,7 @@
           $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
             WHERE pr.`PROID`=p.`PROID`  AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
 
-        
+
           if (isset($_SESSION['CUSID'])) {
             $userId = $_SESSION['CUSID'];
             $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
@@ -105,6 +105,8 @@
                     <div class="productinfo text-center">
                       <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" />
                       <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
+                      <h5><del>&#8369 <?php echo $result->ORIGINALPRICE; ?></del></h5>
+
                       <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
@@ -150,7 +152,15 @@
               <div class="item active">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                WHERE pr.`PROID`=p.`PROID`  AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
+
+                if (isset($_SESSION['CUSID'])) {
+                  $userId = $_SESSION['CUSID'];
+                  $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
                     WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
+                }
+
+
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
@@ -180,7 +190,13 @@
               <div class="item">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
+                WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
+
+                if (isset($_SESSION['CUSID'])) {
+                  $userId = $_SESSION['CUSID'];
+                  $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                  WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
+                }
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
