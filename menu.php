@@ -17,16 +17,17 @@
            <!--features_items-->
            <h2 class="title text-center">Products</h2>
            <?php
+            $userId = $_SESSION['CUSID'];
             if (isset($_POST['search'])) {
               $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                          WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0  and P.PROSTATS='Available'
+                          WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0  and P.PROSTATS='Available'
                 AND ( `CATEGORIES` LIKE '%{$_POST['search']}%' OR `PRODESC` LIKE '%{$_POST['search']}%' or `PROQTY` LIKE '%{$_POST['search']}%' or `PROPRICE` LIKE '%{$_POST['search']}%')";
             } elseif (isset($_GET['category'])) {
               $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                          WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and P.PROSTATS='Available' AND  CATEGORIES='{$_GET['category']}'";
+                          WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and P.PROSTATS='Available' AND  CATEGORIES='{$_GET['category']}'";
             } else {
               $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                          WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0  and P.PROSTATS='Available'";
+                          WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0  and P.PROSTATS='Available'";
             }
 
 

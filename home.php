@@ -78,9 +78,10 @@
           <h2 class="title text-center">Features Items</h2>
 
           <?php
+          $userId = $_SESSION['CUSID'];
 
           $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-            WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
+            WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
           $mydb->setQuery($query);
           $cur = $mydb->loadResultList();
 
@@ -143,7 +144,7 @@
               <div class="item active">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
+                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
@@ -173,7 +174,7 @@
               <div class="item">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
+                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='".$userId."' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,6";
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
