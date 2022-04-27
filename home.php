@@ -113,6 +113,7 @@
                     <div class="product-overlay">
                       <div class="overlay-content">
                         <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
+                        
                         <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                         <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                       </div>
@@ -177,6 +178,7 @@
                           <div class="productinfo text-center">
                             <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" />
                             <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
+                            <h5><del>&#8369 <?php echo $result->ORIGINALPRICE; ?></del></h5>
                             <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                             <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                           </div>
@@ -213,6 +215,7 @@
                           <div class="productinfo text-center">
                             <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" />
                             <h2>&#8369 <?php echo $result->PRODISPRICE; ?></h2>
+                            <h5><del>&#8369 <?php echo $result->ORIGINALPRICE; ?></del></h5>
                             <p style=" white-space: pre;"><?php echo    $result->PRODESC; ?></p>
                             <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                           </div>
