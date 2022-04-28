@@ -69,7 +69,7 @@
                    <div class="product-image-wrapper">
                      <div class="single-products">
                        <div class="productinfo text-center">
-                         <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" />
+                         <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="300" />
                          <h2>¥ <?php echo $result->PRODISPRICE; ?></h2>
                          <h5><del>¥ <?php echo $result->ORIGINALPRICE; ?></del></h5>
                          <p><?php echo    $result->PRODESC; ?> || <?php echo    $result->CAMPUS; ?> || <?php echo    $result->BOOKCONDITION; ?> </p>
