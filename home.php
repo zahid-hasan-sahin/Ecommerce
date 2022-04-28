@@ -19,7 +19,7 @@
 
               </div>
               <div class="col-sm-6">
-                <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                <img src="images/home/home1.png" class="girl img-responsive" alt="" />
                 <img src="images/home/pricing.png" class="pricing" alt="" />
               </div>
             </div>
@@ -31,7 +31,7 @@
 
               </div>
               <div class="col-sm-6">
-                <img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                <img src="images/home/home2.png" class="girl img-responsive" alt="" />
                 <img src="images/home/pricing.png" class="pricing" alt="" />
               </div>
             </div>
@@ -44,7 +44,7 @@
 
               </div>
               <div class="col-sm-6">
-                <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                <img src="images/home/home3.png" class="girl img-responsive" alt="" />
                 <img src="images/home/pricing.png" class="pricing" alt="" />
               </div>
             </div>
@@ -88,6 +88,7 @@
             $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
             WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND()";
           }
+          
           $mydb->setQuery($query);
           $cur = $mydb->loadResultList();
 
