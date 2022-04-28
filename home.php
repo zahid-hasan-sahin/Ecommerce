@@ -80,13 +80,13 @@
           <?php
 
           $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-            WHERE pr.`PROID`=p.`PROID`  AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
+            WHERE pr.`PROID`=p.`PROID`  AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND()";
 
 
           if (isset($_SESSION['CUSID'])) {
             $userId = $_SESSION['CUSID'];
             $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-            WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'";
+            WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND()";
           }
           $mydb->setQuery($query);
           $cur = $mydb->loadResultList();
@@ -99,14 +99,17 @@
               <input type="hidden" id="PROQTY" name="PROQTY" value="<?php echo $result->PROQTY; ?>">
 
               <input type="hidden" name="PROID" value="<?php echo $result->PROID; ?>">
-              <div class="col-sm-4">
+              <div class="col-sm-4" style="height:500px">
                 <div class="product-image-wrapper">
                   <div class="single-products">
                     <div class="productinfo text-center">
-                      <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="300" />
+                      <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="230" />
                       <h2>¥ <?php echo $result->PRODISPRICE; ?></h2>
                       <h5><del>¥ <?php echo $result->ORIGINALPRICE; ?></del></h5>
-                      <p><?php echo    $result->PRODESC; ?> || <?php echo    $result->CAMPUS; ?> || <?php echo    $result->BOOKCONDITION; ?> </p>
+                      <?php
+                      $str =  $result->PRODESC . " || " . $result->CAMPUS . "||" . $result->BOOKCONDITION;
+                      ?>
+                      <p><?php echo   $str ?> </p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
                     <div class="product-overlay">
@@ -152,12 +155,12 @@
               <div class="item active">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                WHERE pr.`PROID`=p.`PROID`  AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
+                WHERE pr.`PROID`=p.`PROID`  AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3 ";
 
                 if (isset($_SESSION['CUSID'])) {
                   $userId = $_SESSION['CUSID'];
                   $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ";
+                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ORDER BY RAND() ";
                 }
 
 
@@ -171,11 +174,11 @@
                     <input type="hidden" id="PROQTY" name="PROQTY" value="<?php echo $result->PROQTY; ?>">
 
                     <input type="hidden" name="PROID" value="<?php echo $result->PROID; ?>">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="height:500px">
                       <div class="product-image-wrapper">
                         <div class="single-products">
                           <div class="productinfo text-center">
-                            <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="300" />
+                            <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="230" />
                             <h2>¥ <?php echo $result->PRODISPRICE; ?></h2>
                             <h5><del>¥ <?php echo $result->ORIGINALPRICE; ?></del></h5>
                             <p><?php echo    $result->PRODESC; ?> || <?php echo    $result->CAMPUS; ?> || <?php echo    $result->BOOKCONDITION; ?> </p>
@@ -191,12 +194,12 @@
               <div class="item">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,3";
+                WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3,3";
 
                 if (isset($_SESSION['CUSID'])) {
                   $userId = $_SESSION['CUSID'];
                   $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                  WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3,3";
+                  WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'ORDER BY RAND() limit 3,3";
                 }
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
@@ -208,11 +211,11 @@
                     <input type="hidden" id="PROQTY" name="PROQTY" value="<?php echo $result->PROQTY; ?>">
 
                     <input type="hidden" name="PROID" value="<?php echo $result->PROID; ?>">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="height:500px">
                       <div class="product-image-wrapper">
                         <div class="single-products">
                           <div class="productinfo text-center">
-                            <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" />
+                            <img src="<?php echo web_root . 'customer/sell/products/' . $result->IMAGES; ?>" alt="" width="300" height="230" />
                             <h2>¥ <?php echo $result->PRODISPRICE; ?></h2>
                             <h5><del>¥ <?php echo $result->ORIGINALPRICE; ?></del></h5>
                             <p><?php echo    $result->PRODESC; ?> || <?php echo    $result->CAMPUS; ?> || <?php echo    $result->BOOKCONDITION; ?> </p>
