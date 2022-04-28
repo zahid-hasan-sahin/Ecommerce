@@ -161,7 +161,7 @@
                 if (isset($_SESSION['CUSID'])) {
                   $userId = $_SESSION['CUSID'];
                   $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' limit 3 ORDER BY RAND() ";
+                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND()  limit 3 ";
                 }
 
 
@@ -195,13 +195,9 @@
               <div class="item">
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3,3";
+                WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3";
 
-                if (isset($_SESSION['CUSID'])) {
-                  $userId = $_SESSION['CUSID'];
-                  $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                  WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available'ORDER BY RAND() limit 3,3";
-                }
+              
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
 
