@@ -34,7 +34,7 @@ switch ($action) {
 function doInsert()
 {
 	if (isset($_POST['save'])) {
-		
+
 		$errofile = $_FILES['image']['error'];
 		$type = $_FILES['image']['type'];
 		$temp = $_FILES['image']['tmp_name'];
@@ -85,6 +85,8 @@ function doInsert()
 					$product->PROPRICE		= $_POST['PROPRICE'];
 					$product->PROSTATS		= 'Available';
 					$product->USERID		= $_SESSION['CUSID'];
+					$product->CAMPUS		= $_POST['CAMPUSNAME'];
+					$product->BOOKCONDITION		= $_POST['CONDITION'];
 
 					$product->create();
 					// }
@@ -142,6 +144,8 @@ function doEdit()
 		$product->PROQTY		= $_POST['PROQTY'];
 		$product->ORIGINALPRICE	= $_POST['ORIGINALPRICE'];
 		$product->PROPRICE		= $_POST['PROPRICE'];
+		$product->CAMPUS		= $_POST['CAMPUSNAME'];
+		$product->BOOKCONDITION		= $_POST['CONDITION'];
 		$product->update($_POST['PROID']);
 
 

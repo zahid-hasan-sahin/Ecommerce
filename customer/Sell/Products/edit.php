@@ -54,6 +54,25 @@ $singleproduct = $product->single_product($PROID);
     </div>
   </div>
 
+  <div class="form-group">
+    <div class="col-md-8">
+      <label class="col-md-4 control-label" for="CAMPUSNAME">Campus Name:</label>
+      <div class="col-md-8">
+        <input class="form-control input-sm" id="CAMPUSNAME" name="CAMPUSNAME" placeholder="Campus Name" type="text" value="<?php echo $singleproduct->CAMPUS; ?>">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-md-8">
+      <label class="col-md-4 control-label" for="CONDITION">Condition</label>
+      <div class="col-md-8">
+        <input class="form-control input-sm" id="CAMPUSNAME" name="CONDITION" placeholder="60% New" type="text" value="<?php echo $singleproduct->BOOKCONDITION; ?>">
+      </div>
+    </div>
+  </div>
+
 
   <div class="form-group">
     <div class="col-md-8">

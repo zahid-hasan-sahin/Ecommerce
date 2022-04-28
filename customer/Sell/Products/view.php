@@ -74,6 +74,31 @@ $singlecategory = $category->single_category($singleproduct->CATEGID);
               </tr>
 
 
+              <tr>
+                <td>
+                  <strong>
+                    <!-- <span class="glyphicon glyphicon-eye-open text-primary"></span>  -->
+                    Campus Name
+                  </strong>
+                </td>
+                <td class="text-primary">
+                  <?php echo ': ' . $singleproduct->CAMPUS; ?>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>
+                    <!-- <span class="glyphicon glyphicon-eye-open text-primary"></span>  -->
+                    Book Condition
+                  </strong>
+                </td>
+                <td class="text-primary">
+                  <?php echo ': ' . $singleproduct->BOOKCONDITION; ?>
+                </td>
+              </tr>
+
+
             </tbody>
           </table>
         </div>
