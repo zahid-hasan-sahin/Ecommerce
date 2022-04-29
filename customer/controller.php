@@ -178,55 +178,81 @@ function processorder()
 
 
 	$count_cart = count($_SESSION['gcCart']);
+
+
+
+	$s[-1] = 1;
+	$us[-1] = 1;
+	$on[-1] = 1;
+
+	$tot = 0;
+	if (!empty($_SESSION['gcCart'])) {
+		$count_cart = @count($_SESSION['gcCart']);
+		for ($j = 0; $j < $count_cart; $j++) {
+			$query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+					   WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  and p.PROID='" . $_SESSION['gcCart'][$j]['productid'] . "'";
+			$mydb->setQuery($query);
+			$cur = $mydb->loadResultList();
+			foreach ($cur as $result) {
+				if (!isset($s[$result->USERID])) {
+					$s[$result->USERID]  = 0;
+				}
+				$s[$result->USERID] = $s[$result->USERID] + $_SESSION['gcCart'][$j]['price'];
+				$us[$_SESSION['gcCart'][$j]['price']] = $result->USERID;
+			}
+		}
+	}
+
+	foreach ($s as $key => $value) {
+		if ($key == -1) {
+			continue;
+		}
+		$autonumber = new Autonumber();
+		$res2 = $autonumber->set_autonumber('ordernumber');
+		echo $key . " " . $value . " " . $res2->AUTO . ",";
+		$summary = new Summary();
+		$summary->ORDEREDDATE 	= date("Y-m-d h:i:s");
+		$summary->CUSTOMERID		= $_SESSION['CUSID'];
+		$summary->ORDEREDNUM  	= $res2->AUTO;
+		$on[$key] =  $res2->AUTO;
+		$summary->DELFEE  		= $_POST['PLACE'];
+		$summary->PAYMENTMETHOD	= $_POST['paymethod'];
+		$summary->PAYMENT 		= $value;
+		$summary->ORDEREDSTATS 	= 'Pending';
+		$summary->CLAIMEDDATE		= $_POST['CLAIMEDDATE'];
+		$summary->ORDEREDREMARKS 	= 'Your order is on process.';
+		$summary->HVIEW 			= 0;
+		$summary->USERID 			= $key;
+		$summary->create();
+		$autonumber->auto_update('ordernumber');
+	}
+
 	for ($i = 0; $i < $count_cart; $i++) {
+
 
 		$order = new Order();
 		$order->PROID		    = $_SESSION['gcCart'][$i]['productid'];
 		$order->ORDEREDQTY		= $_SESSION['gcCart'][$i]['qty'];
 		$order->ORDEREDPRICE	= $_SESSION['gcCart'][$i]['price'];
-		$order->ORDEREDNUM		= $_POST['ORDEREDNUM'];
+		$order->ORDEREDNUM		= $on[$us[$_SESSION['gcCart'][$i]['price']]];
 		$order->create();
 
 		$product = new Product();
 		$product->qtydeduct($_SESSION['gcCart'][$i]['productid'], $_SESSION['gcCart'][$i]['qty']);
 		$productId = $_SESSION['gcCart'][$i]['productid'];
 
-		$query = "SELECT USERID FROM `tblproduct` where PROID='".$productId."';";
+		$query = "SELECT USERID FROM `tblproduct` where PROID='" . $productId . "';";
 		$mydb->setQuery($query);
 		$cur = $mydb->loadResultList();
-
-
-		$summary = new Summary();
-		$summary->ORDEREDDATE 	= date("Y-m-d h:i:s");
-		$summary->CUSTOMERID		= $_SESSION['CUSID'];
-		$summary->ORDEREDNUM  	= $_POST['ORDEREDNUM'];
-		$summary->DELFEE  		= $_POST['PLACE'];
-		$summary->PAYMENTMETHOD	= $_POST['paymethod'];
-		$summary->PAYMENT 		= $_POST['alltot'];
-		$summary->ORDEREDSTATS 	= 'Pending';
-		$summary->CLAIMEDDATE		= $_POST['CLAIMEDDATE'];
-		$summary->ORDEREDREMARKS 	= 'Your order is on process.';
-		$summary->HVIEW 			= 0;
-		foreach ($cur as $result) {
-			$summary->USERID 			= $result->USERID;
-		}
-		$summary->create();
 	}
-
-
-
-
-	$autonumber = new Autonumber();
-	$autonumber->auto_update('ordernumber');
 
 
 	unset($_SESSION['gcCart']);
 	unset($_SESSION['orderdetails']);
 
 	message("Order created successfully!", "success");
-		redirect(web_root . "index.php?q=profile");
+	redirect(web_root . "index.php?q=profile");
 }
-
 
 
 function processwishlist()

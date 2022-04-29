@@ -45,6 +45,7 @@
 
 
             foreach ($cur as $result) {
+             
 
         ?>
               <tr>
