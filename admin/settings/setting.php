@@ -22,7 +22,7 @@
                       <div class="panel panel-default">
                           <div class="panel-heading">
                               <h4 class="panel-title">
-                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Set Delivery Fee</a>
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Set Delivery Location</a>
                               </h4>
                           </div>
                           <div id="collapseTwo" class="panel-collapse collapse">

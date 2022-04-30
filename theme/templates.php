@@ -90,7 +90,7 @@ if (isset($_SESSION['gcCart'])) {
                   <li><a href="<?php echo web_root ?>customer/sell"><i class="fab fa-github-square"></i> Sell</a></li>
                   <li><a href="<?php echo web_root ?>index.php?q=profile"><i class="fa fa-user"></i> Account</a></li>
                   <li><a href="<?php echo web_root ?>logout.php"><i class="fa fa-lock"></i> Logout</a></li>
-                   <?php } else { ?>
+                <?php } else { ?>
                   <li><a data-target="#smyModal" data-toggle="modal" href=""><i class="fa fa-lock"></i> Login</a></li>
                 <?php } ?>
               </ul>
@@ -259,11 +259,10 @@ if (isset($_SESSION['gcCart'])) {
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="text-align: center"> 
       <div class="container">
         <div class="row">
-          <p class="pull-left">Modified by <span><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></span></p>
-          <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+          <p><b>ⒸAll Right Reserved By Yangzhou University</b></p>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@
               </div>
               <div class="col-sm-6">
                 <img src="images/home/home1.png" class="girl img-responsive" alt="" />
-                <img src="images/home/pricing.png" class="pricing" alt="" />
+              
               </div>
             </div>
             <div class="item">
@@ -32,7 +32,7 @@
               </div>
               <div class="col-sm-6">
                 <img src="images/home/home2.png" class="girl img-responsive" alt="" />
-                <img src="images/home/pricing.png" class="pricing" alt="" />
+               
               </div>
             </div>
 
@@ -45,7 +45,7 @@
               </div>
               <div class="col-sm-6">
                 <img src="images/home/home3.png" class="girl img-responsive" alt="" />
-                <img src="images/home/pricing.png" class="pricing" alt="" />
+          
               </div>
             </div>
 

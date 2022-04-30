@@ -78,7 +78,7 @@ if ($res > 0) {
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="<?php echo web_root ?>index.php"><i class="fa fa-lock"></i> Buy</a></li>
+                <li><a href="<?php echo web_root ?>index.php"><i class="fab fa-github-square"></i> Buy</a></li>
                 <li><a href="<?php echo web_root ?>logout.php"><i class="fa fa-lock"></i> Logout</a></li>
                 <!-- /.dropdown-user -->
 
