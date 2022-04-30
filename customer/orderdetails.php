@@ -101,7 +101,7 @@ $res = $autonumber->set_autonumber('ordernumber');
         <div class="  pull-right">
           <p align="right">
           <div> Total Price : &#8369 <span id="sum">0.00</span></div>
-          <div> Delivery Fee : &#8369 <span id="fee">0.00</span></div>
+          <div> Delivery Fee : &#8369 0.00(Free)</div>
           <div> Overall Price : &#8369 <span id="overall"><?php echo $tot; ?></span></div>
           <input type="hidden" name="alltot" id="alltot" value="<?php echo $tot; ?>" />
           </p>
