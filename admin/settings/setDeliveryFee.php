@@ -106,9 +106,9 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    
-          <input class="form-control input-sm" id="DELPRICE" name="DELPRICE" placeholder="Delivery Price" type="hidden" value="0">
-    
+
+    <input class="form-control input-sm" id="DELPRICE" name="DELPRICE" placeholder="Delivery Price" type="hidden" value="0">
+
     </div>
 
 
