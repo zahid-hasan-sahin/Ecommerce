@@ -13,9 +13,9 @@
           <div class="carousel-inner">
             <div class="item active">
               <div class="col-sm-6">
-                <h1><span>E</span>-SHOPPER</h1>
-                <h2>Free E-Commerce Template</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <h1><span style="color:green">Online Flea Market</span></h1>
+                <h2>For Foreign Students in YZU</h2>
+                <p>Created By MD ASADUZZAMAN RUMON <br> Software Engineering, Yangzhou University. </p>
 
               </div>
               <div class="col-sm-6">
@@ -25,9 +25,9 @@
             </div>
             <div class="item">
               <div class="col-sm-6">
-                <h1><span>E</span>-SHOPPER</h1>
-                <h2>100% Responsive Design</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <h1><span style="color:green">Online Flea Market</span></h1>
+                <h2>For Foreign Students in YZU</h2>
+                <p>Created By MD ASADUZZAMAN RUMON <br> Software Engineering, Yangzhou University. </p>
 
               </div>
               <div class="col-sm-6">
@@ -38,9 +38,9 @@
 
             <div class="item">
               <div class="col-sm-6">
-                <h1><span>E</span>-SHOPPER</h1>
-                <h2>Free Ecommerce Template</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <h1><span style="color:green">Online Flea Market</span></h1>
+                <h2>For Foreign Students in YZU</h2>
+                <p>Created By MD ASADUZZAMAN RUMON <br> Software Engineering, Yangzhou University.</p>
 
               </div>
               <div class="col-sm-6">
@@ -123,7 +123,7 @@
                           <h2>Seller Details</h2>
                           <h6 style="color:white">---------------</h6>
 
-                          <p><?php echo $res2->FNAME." ".$res2->LNAME." || ".$res2->CITYADD." || ".$res2->PHONE;  ?> </p>
+                          <p><?php echo $res2->FNAME . " " . $res2->LNAME . " || " . $res2->CITYADD . " || " . $res2->PHONE;  ?> </p>
                           <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                         </div>
                       </div>
@@ -169,7 +169,7 @@
                 if (isset($_SESSION['CUSID'])) {
                   $userId = $_SESSION['CUSID'];
                   $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
-                    WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND   p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND()  limit 3 ";
+                   WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3";
                 }
 
 
@@ -204,10 +204,17 @@
                 <?php
                 $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
                 WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3";
+                if (isset($_SESSION['CUSID'])) {
+                  $userId = $_SESSION['CUSID'];
+                  $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                   WHERE pr.`PROID`=p.`PROID` and p.USERID!='" . $userId . "' AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 and p.PROSTATS='Available' ORDER BY RAND() limit 3";
+                }
+
 
 
                 $mydb->setQuery($query);
                 $cur = $mydb->loadResultList();
+
 
                 foreach ($cur as $result) {
                 ?>

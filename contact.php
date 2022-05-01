@@ -35,12 +35,12 @@
                     <div class="contact-info">
                         <h2 class="title text-center">Contact Info</h2>
                         <address>
-                            <p>E-Shopper Inc.</p>
-                            <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-                            <p>Newyork USA</p>
-                            <p>Mobile: +2346 17 38 93</p>
-                            <p>Fax: 1-714-252-0026</p>
-                            <p>Email: info@e-shopper.com</p>
+                            <p>Online Flea Market</p>
+                            <p>88 South Daxue Road </p>
+                            <p>Yangzhou, Jiangsu Province</p>
+                            <p>Phone: +86-514-8797858</p>
+                            <p>Fax: 86-514-87311374</p>
+                            <p>Email: onlinefleamarket.yzu.edu.cn</p>
                         </address>
                         <div class="social-networks">
                             <h2 class="title text-center">Social Networking</h2>

@@ -24,7 +24,7 @@ $query = "SELECT * FROM `tblproduct` p  ,`tblcategory` c ,`tblpromopro` pr
             <div class="row">
                 <div class="col-m-12">
                     <div class="col-md-8 responsive">
-                          <img width="250" class="img-portfolio " height="200"  src="<?php echo web_root . 'admin/products/'.  $result->IMAGES;?>" alt="">
+                          <img width="250" class="img-portfolio " height="200"  src="<?php echo web_root . 'customer/sell/products/'.  $result->IMAGES;?>" alt="">
                
                     </div>
                     </div>
@@ -46,9 +46,9 @@ $query = "SELECT * FROM `tblproduct` p  ,`tblcategory` c ,`tblpromopro` pr
                 <ul>
                     <!-- <li>Model - <?php echo $result->PROMODEL; ?></li> -->
                     <li>Type - <?php echo $result->PRODESC; ?></li>
-                    <li>Price - &#8369 <?php echo $result->PROPRICE; ?></li>
+                    <li>Price - ¥ <?php echo $result->PROPRICE; ?></li>
                     <li>Discount - <?php echo $result->PRODISCOUNT; ?> % </li> 
-                    <li>Discounted Price - &#8369 <?php echo $result->PRODISPRICE; ?> </li> 
+                    <li>Discounted Price - ¥ <?php echo $result->PRODISPRICE; ?> </li> 
                 </ul>
 
                 
@@ -89,7 +89,7 @@ $query = "SELECT * FROM `tblproduct` p  ,`tblcategory` c ,`tblpromopro` pr
                
                 <div class="input-group">
                   <div class="input-group-addon">
-                    <i> &#8369 </i>
+                    <i> ¥ </i>
                   </div>
                   <input type="text"  class="form-control" name="PRODISPRICE" id="PRODISPRICE" placeHolder="0.0" readonly="true">
                 </div>

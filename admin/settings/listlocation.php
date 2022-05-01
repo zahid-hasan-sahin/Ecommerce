@@ -30,7 +30,7 @@
 				  		echo '<tr>'; 
 				    		
 				  		echo '<td>'.$result->BRGY.' '.$result->PLACE.'  </a></td>';  ; 
-				  		echo '<td> &#8369 '.  number_format($result->DELPRICE,2).'</td>'; 
+				  		echo '<td> ¥ '.  number_format($result->DELPRICE,2).'</td>'; 
 				  		echo
 				  		 '<td align="left">
 							<a href="'.web_root.'admin/settings/index.php?view=edit&id='.$result->SETTINGID.'" class="btn btn-primary btn-xs">Edit</a>

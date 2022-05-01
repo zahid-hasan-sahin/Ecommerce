@@ -41,7 +41,7 @@ check_message();
 
 					echo '<td>' . $result->CATEGORIES . '</td>';
 					// echo '<td>'. $result->CATEGORIES.'</td>'; 
-					echo '<td> &#8369 ' .  number_format($result->PRODISPRICE, 2) . '</td>';
+					echo '<td> ¥ ' .  number_format($result->PRODISPRICE, 2) . '</td>';
 					// echo '<td width="4%">'. $result->PROQTY.'</td>'; .
 
 					if ($result->PROSTATS == 'Available') {
