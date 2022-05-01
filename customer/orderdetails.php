@@ -84,8 +84,8 @@ $res = $autonumber->set_autonumber('ordernumber');
                     <td><img src="customer/sell/products/<?php echo $result->IMAGES ?>" width="50px" height="50px"></td>
                     <td><?php echo $result->PRODESC; ?></td>
                     <td align="center"><?php echo $_SESSION['gcCart'][$i]['qty']; ?></td>
-                    <td>&#8369 <?php echo  $result->PRODISPRICE ?></td>
-                    <td>&#8369 <output><?php echo $_SESSION['gcCart'][$i]['price'] ?></output></td>
+                    <td>¥ <?php echo  $result->PRODISPRICE ?></td>
+                    <td>¥ <output><?php echo $_SESSION['gcCart'][$i]['price'] ?></output></td>
                   </tr>
             <?php
                   $tot += $_SESSION['gcCart'][$i]['price'];
@@ -100,9 +100,9 @@ $res = $autonumber->set_autonumber('ordernumber');
         </table>
         <div class="  pull-right">
           <p align="right">
-          <div> Total Price : &#8369 <span id="sum">0.00</span></div>
-          <div> Delivery Fee : &#8369 0.00(Free)</div>
-          <div> Overall Price : &#8369 <span id="overall"><?php echo $tot; ?></span></div>
+          <div> Total Price : ¥ <span id="sum">0.00</span></div>
+          <div> Delivery Fee : ¥ 0.00(Free)</div>
+          <div> Overall Price : ¥ <span id="overall"><?php echo $tot; ?></span></div>
           <input type="hidden" name="alltot" id="alltot" value="<?php echo $tot; ?>" />
           </p>
         </div>

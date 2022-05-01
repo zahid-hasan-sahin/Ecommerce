@@ -51,9 +51,9 @@ check_message();
 					echo '<td><a title="edit" href="' . web_root . 'customer/sell/products/index.php?view=edit&id=' . $result->PROID . '"><i class="fa fa-pencil "></i>' . $result->CATEGORIES . '</a></td>';
 
 					echo '<td>' . $result->PRODESC . '</td>';
-					echo '<td> &#8369 ' .  number_format($result->PROPRICE, 2) . '</td>';
-					echo '<td> &#8369 ' .  number_format($result->PRODISCOUNT, 0) . '</td>';
-					echo '<td> &#8369 ' .  number_format($result->PRODISPRICE, 2) . '</td>';
+					echo '<td> ¥ ' .  number_format($result->PROPRICE, 2) . '</td>';
+					echo '<td> ¥ ' .  number_format($result->PRODISCOUNT, 0) . '</td>';
+					echo '<td> ¥ ' .  number_format($result->PRODISPRICE, 2) . '</td>';
 
 					echo '<td width="4%">' . $result->PROQTY . '</td>';
 					// echo '<td><a href="controller.php?action=delete&id='.$result->PROD.'" class="btn btn-danger">delete</a></td>';

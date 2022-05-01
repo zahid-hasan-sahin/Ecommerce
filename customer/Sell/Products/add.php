@@ -97,7 +97,7 @@ if (!isset($_SESSION['CUSID'])) {
       <label class="col-md-2 control-label" for="PROPRICE">Price:</label>
 
       <div class="col-md-3">
-        <input class="form-control input-sm" id="PROPRICE" step="any" name="PROPRICE" placeholder="&#8369 Price " type="number" value="">
+        <input class="form-control input-sm" id="PROPRICE" step="any" name="PROPRICE" placeholder="¥ Price " type="number" value="">
       </div>
     </div>
   </div>

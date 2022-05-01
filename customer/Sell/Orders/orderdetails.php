@@ -75,8 +75,8 @@ if (!isset($_SESSION['CUSID'])) {
                           <td><img src="<?php echo web_root.'admin/modules/product/'.$result->IMAGES; ?>" onload="totalprice()" width="50px" height="50px"></td>
                           <td><?php echo $result->PRODUCTNAME ?></td>
                           <td><?php echo $_SESSION['fixnmix_cart'][$i]['qty'] ?></td>
-                          <td>&#8369 <?php echo  $result->PRICE ?></td>
-                          <td>&#8369 <output><?php echo $_SESSION['fixnmix_cart'][$i]['price']?></output></td>
+                          <td>¥ <?php echo  $result->PRICE ?></td>
+                          <td>¥ <output><?php echo $_SESSION['fixnmix_cart'][$i]['price']?></output></td>
                         </tr>
               <?php
                         }
@@ -90,7 +90,7 @@ if (!isset($_SESSION['CUSID'])) {
               </table>
 
             <div class="container"> 
-              <div class="row"> <h3  align="right" margin-right="20%">Total Price : &#8369 <span  id="sum">0.00</span></h3></div>  
+              <div class="row"> <h3  align="right" margin-right="20%">Total Price : ¥ <span  id="sum">0.00</span></h3></div>  
                 </div>
            
                 <?php 

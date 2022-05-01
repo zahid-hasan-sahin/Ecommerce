@@ -79,7 +79,7 @@
                 <td>
                   <input type="hidden" id="PROPRICE<?php echo $result->PROID;  ?>" name="PROPRICE<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE; ?>">
 
-                  &#8369 <?php echo  $result->PRODISPRICE; ?>
+                  ¥ <?php echo  $result->PRODISPRICE; ?>
 
                 </td>
                 <td class="input-group custom-search-form">
@@ -95,7 +95,7 @@
 
                 <input type="hidden" id="TOT<?php echo $result->PROID;  ?>" name="TOT<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE; ?>">
 
-                <td> &#8369 <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price']; ?></output></td>
+                <td> ¥ <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price']; ?></output></td>
               </tr>
 
         <?php
@@ -109,7 +109,7 @@
       </table>
 
 
-      <h3 align="right"> Total &#8369<span id="sum">0</span></h3>
+      <h3 align="right"> Total ¥<span id="sum">0</span></h3>
     </div>
   </div>
 

@@ -131,8 +131,8 @@
                                      </div> 
 
                                     <!-- <div style="float: right; width:100px"></div> -->
-                                     <div style="float: left; width:50px">&nbsp;&nbsp;&#8369<span id="price1"><?php echo $result->PRICE; ?></span></div>
-                                     <div  id="test" style="float: right; width:50px">&#8369<output name="TOTAL" for="QTY price"></output></div>                                     
+                                     <div style="float: left; width:50px">&nbsp;&nbsp;¥<span id="price1"><?php echo $result->PRICE; ?></span></div>
+                                     <div  id="test" style="float: right; width:50px">¥<output name="TOTAL" for="QTY price"></output></div>                                     
                                   </div>
                               </form> 
 
@@ -150,7 +150,7 @@
                             </tr>
                             <tr >  
                             <td>                               
-                             <div class="culomn4"><div style="float: right;"><h1> Total Price : &#8369<span id="sum">0</span></h1></div></div>
+                             <div class="culomn4"><div style="float: right;"><h1> Total Price : ¥<span id="sum">0</span></h1></div></div>
                             </td>                        
                               
                             </tr>

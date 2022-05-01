@@ -73,7 +73,7 @@ if ($res > 0) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo web_root; ?>customer/sell/index.php">Janobe E-Commerce</a>
+                <a class="navbar-brand" href="<?php echo web_root; ?>customer/sell/index.php">Online Flea Market</a>
             </div>
             <!-- /.navbar-header -->
 

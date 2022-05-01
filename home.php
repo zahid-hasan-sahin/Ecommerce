@@ -113,14 +113,14 @@
                         <h2>¥ <?php echo $result->PRODISPRICE; ?></h2>
                         <h5><del>¥ <?php echo $result->ORIGINALPRICE; ?></del></h5>
                         <?php
-                        $str =  $result->PRODESC . " || " . $result->CAMPUS . "||" . $result->BOOKCONDITION;
+                        $str =  $result->PRODESC . " || " . $result->CAMPUS . " || " . $result->BOOKCONDITION;
                         ?>
                         <p><?php echo   $str ?> </p>
                         <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                       </div>
                       <div class="product-overlay">
                         <div class="overlay-content">
-                          <h2>Seller Details</h2>
+                          <h3>Seller Details</h3>
                           <h6 style="color:white">---------------</h6>
 
                           <p><?php echo $res2->FNAME . " " . $res2->LNAME . " || " . $res2->CITYADD . " || " . $res2->PHONE;  ?> </p>
